@@ -1,0 +1,103 @@
+class Header {
+	gameType = TDM;
+	minPlayers = 1;
+	maxPlayers = 12;
+};
+
+author = "Peter";
+onLoadMission = "Eliminate the enemy";
+onLoadIntro = "Call of Arma";
+onLoadName = "Call of Arma";
+
+respawn = "BASE";
+respawnOnStart = 1;
+respawnTemplates[] = { "Base", "Counter", "Wave", "MenuPosition", "MenuInventory" };
+respawnDelay = 2;
+
+corpseManagerMode=2;
+corpseRemovalMinTime=1;
+corpseRemovalMaxTime=2;
+
+disableChannels[] = {2, 3, 4};
+enableDebugConsole = 1;
+saving = 0;
+briefing = 0;
+
+// Insecure?
+allowFunctionsLog = 1;
+
+class CfgFunctions
+{
+	#include "COA\functions.hpp"
+};
+
+#include "COA\gui_defines.hpp"
+class RscTitles
+{
+	#include "COA\hud.hpp"
+};
+
+class CfgDebriefing
+{
+	class Blufor_win
+	{
+		title = "BLUFOR has won!";
+	};
+	class Opfor_win
+	{
+		title = "OPFOR has won!";
+	};
+	class Draw
+	{
+		title = "DRAW";
+	};
+};
+
+class CfgRespawnInventory
+{
+	class Blufor_Rifle
+	{
+		vehicle = "B_Soldier_F";
+	};
+	class Blufor_Marksman
+	{
+		vehicle = "B_Soldier_M_F";
+	};
+	class Blufor_Teamleader
+	{
+		vehicle = "B_Soldier_TL_F";
+	};
+	class Blufor_Pilot
+	{
+		vehicle = "B_Pilot_F";
+	};
+
+	class Opfor_Rifle
+	{
+		vehicle = "O_Soldier_F";
+	};
+	class Opfor_Marksman
+	{
+		vehicle = "O_Soldier_M_F";
+	};
+	class Opfor_Teamleader
+	{
+		vehicle = "O_Soldier_TL_F";
+	};
+	class Opfor_Pilot
+	{
+		vehicle = "O_Pilot_F";
+	};
+};
+
+
+class Params
+{
+	class TICKETS
+	{
+		title = "Tickets per side (respawns)";
+		values[] = {10, 20, 30};
+		texts[] = {"10", "20", "30"};
+		default = 10;
+	};
+};
